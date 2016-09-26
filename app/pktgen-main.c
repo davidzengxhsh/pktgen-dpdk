@@ -534,7 +534,7 @@ main(int argc, char **argv)
 void
 pktgen_stop_running(void)
 {
-	uint8_t lid;
+	uint32_t lid;
 
 	for (lid = 0; lid < RTE_MAX_LCORE; lid++)
 		wr_stop_lcore(pktgen.l2p, lid);

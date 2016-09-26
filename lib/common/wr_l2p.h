@@ -94,7 +94,7 @@ typedef struct {
 static __inline__ void
 wr_raw_dump_l2p(l2p_t *l2p)
 {
-	uint8_t i, j;
+	uint32_t i, j;
 	lobj_t    *lobj;
 	pobj_t    *pobj;
 	const char    *types[] = { "Unkn", " RX ", " TX ", "RXTX", NULL };
@@ -224,7 +224,7 @@ wr_inc_tx(l2p_t *l2p, uint8_t pid, uint8_t lid) {
  *
  */
 static __inline__ uint16_t
-wr_get_map(l2p_t *l2p, uint8_t pid, uint8_t lid)
+wr_get_map(l2p_t *l2p, uint8_t pid, uint32_t lid)
 {
 	return l2p->map[pid][lid].rxtx;
 }
@@ -481,7 +481,8 @@ wr_dump_l2p(l2p_t *l2p)
 {
 	lobj_t        *lobj;
 	pobj_t        *pobj;
-	uint8_t lid, pid, i;
+	uint8_t pid, i;
+	uint32_t lid;
 	const char    *types[] =
 		{ "Unknown", "RX-Only", "TX-Only", "RX-TX  ", NULL };
 

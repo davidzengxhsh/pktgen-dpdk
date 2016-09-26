@@ -149,7 +149,7 @@ pktgen_set_capture(port_info_t *info, uint32_t onOff)
 		}
 
 		/* Find an lcore that can capture packets for the requested port */
-		uint8_t lid_idx, lid, rxid;
+		uint32_t lid_idx, lid, rxid;
 		for (lid_idx = 0;
 		     lid_idx < wr_get_port_nb_lids(pktgen.l2p, info->pid);
 		     ++lid_idx) {
